@@ -9,27 +9,26 @@ body {
 
 @media screen and (max-width: 768px) {
   body {
-      overflow-y: visible; /* Hide vertical scrollbar */
+      overflow-y: visible; 
   }
 }
 
 .main-div {
   background: white;
   display: flex;
-  align-content: stretch;
-  justify-content: flex-end;
+  flex-direction: row;
   height: 100vh;
 }
 
 @media screen and (max-width: 768px) {
   .main-div {
-      height: auto;
+    flex-direction: column;
   }
 }
 
 .first-half {
-  background-color: #282a36;
   width: 40%;
+  background-color: #282a36;
 }
 
 .life-code {
@@ -39,19 +38,19 @@ body {
 }
 
 .second-half {
-  padding: 30px;
   width: 60%;
+  padding: 30px;
   background-color: white;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
 }
 
 @media screen and (max-width: 768px) {
   .first-half {
-      display: none;
+    width: 100%;
   }
   
   .second-half {
-      width: 100vw;
+    width: auto;
   }
 }
 
