@@ -1,8 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import GitHubCalendar from 'github-calendar';
+import axios from 'axios';
 
 function App() {
+
+  const [topCatFact, setTopCatFact] = useState("");
+
+  useEffect(() => {
+    const asyncCatFacts = async () => {
+      const result = await axios.get("https://cat-fact.herokuapp.com/facts");
+      const topFact = result?.data?.all[0]?.text;
+      setTopCatFact(topFact);
+    };
+    asyncCatFacts();
+  });
 
   useEffect(() => {
     GitHubCalendar(".calendar", "gyakusetsu", { responsive: true });
@@ -41,6 +53,20 @@ function App() {
             <i className="fa fa-github"></i>
           &nbsp;GYAKUSETSU </button>
         </div>
+        {
+          topCatFact &&
+          <div className="cat-fact">
+            <hr style={{
+              opacity: 0.3
+            }} />
+            <p>
+              <b style={{
+                fontWeight: "bold"
+              }}> Cat Fact: </b>
+              {topCatFact}
+            </p>
+          </div>
+        }
       </div>
     </div>
   );

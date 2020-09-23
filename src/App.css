@@ -65,8 +65,8 @@ body {
 }
 
 .intro {
-  font-size: 3.75rem;
-  line-height: 3.75rem;
+  font-size: 3rem;
+  line-height: 3rem;
   letter-spacing: -.0083333333em;
 }
 
@@ -133,4 +133,11 @@ button {
 
 .button-github:hover {
   background-color: whitesmoke;
+}
+
+.cat-fact {
+  text-align: left;
+  position: fixed;
+  bottom: 0;
+  padding-right: 30px;
 }
